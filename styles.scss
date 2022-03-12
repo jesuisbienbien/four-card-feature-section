@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Colors */
+:root {
+  // Primary
+
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+
+  // Neutral
+
+  --very-dark-blue: hsl(234, 12%, 34%); //for headings
+  --grayish-blue: hsl(229, 6%, 66%); // for paragraphs
+  --very-light-gray: hsl(0, 0%, 98%); //for background
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  //   font-size: 0.9rem;
+  background: var(--very-light-gray);
+}
+main {
+  padding: 2rem;
+
+  max-width: 400px;
+  margin: auto;
+}
+
+/* Headers Styling */
+.headers {
+  text-align: center;
+  p {
+    font-size: 1rem;
+    padding-top: 1rem;
+  }
+}
+.main-headers {
+  font-size: 1.5rem;
+  word-spacing: 2px;
+  color: var(--very-dark-blue);
+}
+.light-header {
+  font-weight: 200;
+}
+.bold-headers {
+  font-weight: 600;
+}
+.description {
+  color: var(--grayish-blue);
+  font-weight: 400;
+}
+
+/* Cards Styling */
+
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 5rem;
+}
+.card {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+  border-radius: 10px;
+
+  padding: 1.8rem;
+
+  p {
+    font-size: 0.8rem;
+    letter-spacing: 0.4px;
+    line-height: 1.5;
+    padding-top: 0.5rem;
+  }
+}
+.card-header {
+  color: var(--very-dark-blue);
+  font-size: 1.3rem;
+}
+
+.card-img {
+  width: 23%;
+  padding-top: 1.5rem;
+  display: block;
+  margin-left: auto;
+}
+
+.supervisor {
+  border-top: solid 4px var(--cyan);
+}
+
+.team-builder {
+  border-top: solid 4px var(--red);
+}
+
+.karma {
+  border-top: solid 4px var(--orange);
+}
+
+.calculator {
+  border-top: solid 4px var(--blue);
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 1440px) {
+  main {
+    max-width: 1115px;
+  }
+  .headers {
+    p {
+      font-size: 0.9rem;
+      max-width: 450px;
+      margin: auto;
+    }
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "supervisor team calculator"
+      "supervisor  karma  calculator";
+    gap: 2rem;
+    justify-items: start;
+    align-items: end;
+    margin-top: 4rem;
+  }
+  .supervisor {
+    grid-area: supervisor;
+    max-height: fit-content;
+    margin: auto;
+  }
+  .team-builder {
+    grid-area: team;
+  }
+  .karma {
+    grid-area: karma;
+  }
+  .calculator {
+    grid-area: calculator;
+    margin: auto;
+  }
+
+  .card-img {
+    width: 20%;
+  }
+}
